@@ -6,7 +6,6 @@
 <title>Para Você ❤️</title>
 
 <style>
-/* trava qualquer animação antiga */
 *{
   animation:none !important;
   transition:none !important;
@@ -17,14 +16,15 @@ body{
   min-height:100vh;
   background:#0b0014;
   color:white;
-  font-family:Arial, sans-serif;
+  font-family: "Georgia", serif;
+  font-style: italic;
   display:flex;
   justify-content:center;
   align-items:center;
   overflow:hidden;
 }
 
-/* brilho vermelho vindo de baixo */
+/* brilho vermelho embaixo */
 .red-glow{
   position:fixed;
   bottom:0;
@@ -41,7 +41,7 @@ body{
   z-index:0;
 }
 
-/* corações PARADOS */
+/* corações parados */
 .hearts{
   position:fixed;
   inset:0;
@@ -86,21 +86,13 @@ h1{
 <div class="red-glow"></div>
 
 <div class="hearts">
-  <div class="heart" style="top:8%;left:10%;">❤️</div>
-  <div class="heart" style="top:14%;left:42%;">❤️</div>
-  <div class="heart" style="top:20%;left:78%;">❤️</div>
-
-  <div class="heart" style="top:34%;left:16%;">❤️</div>
-  <div class="heart" style="top:40%;left:60%;">❤️</div>
-  <div class="heart" style="top:46%;left:86%;">❤️</div>
-
-  <div class="heart" style="top:58%;left:12%;">❤️</div>
-  <div class="heart" style="top:64%;left:36%;">❤️</div>
-  <div class="heart" style="top:70%;left:70%;">❤️</div>
-
-  <div class="heart" style="top:82%;left:22%;">❤️</div>
-  <div class="heart" style="top:86%;left:52%;">❤️</div>
-  <div class="heart" style="top:90%;left:84%;">❤️</div>
+  <div class="heart" style="top:10%;left:12%">❤️</div>
+  <div class="heart" style="top:18%;left:40%">❤️</div>
+  <div class="heart" style="top:26%;left:75%">❤️</div>
+  <div class="heart" style="top:40%;left:15%">❤️</div>
+  <div class="heart" style="top:55%;left:60%">❤️</div>
+  <div class="heart" style="top:70%;left:30%">❤️</div>
+  <div class="heart" style="top:82%;left:80%">❤️</div>
 </div>
 
 <div class="container">
@@ -117,16 +109,11 @@ h1{
     Te amo mais do que consigo explicar em palavras.
   </div>
 
-  <!-- Música (clicar no play) -->
-  <iframe
-    width="100%"
-    height="166"
-    src="https://www.youtube-nocookie.com/embed/ZQFmRXgeR-s"
-    title="Pupila - ANAVITÓRIA"
-    frameborder="0"
-    allow="encrypted-media; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+  <!-- SÓ MÚSICA (sem vídeo) -->
+  <audio controls>
+    <source src="pupila.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
 </div>
 
 </body>
