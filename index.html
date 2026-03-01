@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você ❤️</title>
+
+<style>
+/* trava qualquer animação antiga */
+*{
+  animation:none !important;
+  transition:none !important;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#0b0014;
+  color:white;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* brilho vermelho escuro vindo de baixo */
+.red-glow{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:50%;
+  background:radial-gradient(
+    ellipse at bottom,
+    rgba(120,0,0,0.45),
+    rgba(120,0,0,0.2),
+    transparent 75%
+  );
+  pointer-events:none;
+  z-index:0;
+}
+
+/* muitos corações PARADOS */
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  font-size:28px;
+  color:#ff4b6e;
+  opacity:0.35;
+}
+
+/* cartão */
+.container{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  padding:36px;
+  background:rgba(0,0,0,0.5);
+  border-radius:24px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(120,0,0,0.4);
+}
+
+/* texto grande */
+.big-love{
+  font-size:3.2em;
+  color:#7a0000;
+  margin-bottom:22px;
+}
+
+.carta{
+  font-size:1.25em;
+  line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="red-glow"></div>
+
+<div class="hearts">
+  <div class="heart" style="top:5%;left:8%;">❤️</div>
+  <div class="heart" style="top:8%;left:30%;">❤️</div>
+  <div class="heart" style="top:10%;left:55%;">❤️</div>
+  <div class="heart" style="top:12%;left:80%;">❤️</div>
+
+  <div class="heart" style="top:25%;left:12%;">❤️</div>
+  <div class="heart" style="top:28%;left:38%;">❤️</div>
+  <div class="heart" style="top:30%;left:65%;">❤️</div>
+  <div class="heart" style="top:34%;left:88%;">❤️</div>
+
+  <div class="heart" style="top:48%;left:6%;">❤️</div>
+  <div class="heart" style="top:50%;left:28%;">❤️</div>
+  <div class="heart" style="top:52%;left:52%;">❤️</div>
+  <div class="heart" style="top:55%;left:78%;">❤️</div>
+
+  <div class="heart" style="top:68%;left:15%;">❤️</div>
+  <div class="heart" style="top:70%;left:40%;">❤️</div>
+  <div class="heart" style="top:72%;left:66%;">❤️</div>
+  <div class="heart" style="top:75%;left:90%;">❤️</div>
+
+  <div class="heart" style="top:88%;left:20%;">❤️</div>
+  <div class="heart" style="top:90%;left:50%;">❤️</div>
+  <div class="heart" style="top:92%;left:82%;">❤️</div>
+</div>
+
+<div class="container">
+  <div class="big-love">EU TI AMUUUU ❤️</div>
+
+  <div class="carta">
+    Amor, eu precisava deixar isso aqui de um jeito que você pudesse ver
+    sempre que quisesse. Você é a pessoa que muda meus dias, que traz calma
+    quando tudo parece pesado e que faz meu coração sorrir sem esforço.<br><br>
+
+    Cada conversa, cada riso bobo, cada momento ao seu lado tem um valor
+    enorme pra mim. Você me faz sentir em casa, me faz sentir amado e me dá
+    forças até nos dias mais difíceis.<br><br>
+
+    Quero que você nunca esqueça o quanto é especial, o quanto é importante
+    e o quanto é amada. Eu escolho você todos os dias, em cada detalhe,
+    em cada pensamento e em cada batida do meu coração.<br><br>
+
+    EU TI AMUUUU, hoje, amanhã e sempre.
+  </div>
+</div>
+
+</body>
+</html>
