@@ -2,80 +2,32 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Você ❤️</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{
   background:linear-gradient(180deg,#0b0014,#16001f);
-  color:white;
-  height:100vh;
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  color:#fff;height:100vh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center
 }
-
-/* Caixa do bilhete */
 .container{
-  z-index:2;
-  max-width:650px;
-  padding:30px;
-  background:rgba(0,0,0,0.35);
-  border-radius:20px;
+  z-index:2;max-width:700px;padding:30px;
+  background:rgba(0,0,0,.35);border-radius:20px
 }
-
-h1{
-  color:#ff6ec7;
-  margin-bottom:20px;
-}
-
-.carta{
-  font-size:1.15em;
-  line-height:1.7;
-  opacity:0.95;
-}
-
+h1{color:#ff6ec7;margin-bottom:18px}
+.carta{font-size:1.15em;line-height:1.7}
 button{
-  margin-top:25px;
-  padding:15px 30px;
-  border-radius:30px;
-  border:none;
-  background:#ff6ec7;
-  font-size:16px;
-  cursor:pointer;
+  margin-top:22px;padding:14px 28px;border-radius:30px;border:none;
+  background:#ff6ec7;font-size:16px;cursor:pointer
 }
-
-/* CORAÇÕES */
 .heart{
-  position:absolute;
-  bottom:-40px;
-  color:#ff6ec7;
-  opacity:0.8;
-  animation:
-    subir linear forwards,
-    lado ease-in-out infinite;
+  position:absolute;bottom:-40px;color:#ff6ec7;opacity:.85;
+  animation:subir linear forwards, lado ease-in-out infinite
 }
-
-/* sobe */
-@keyframes subir{
-  from{transform:translateY(0)}
-  to{transform:translateY(-120vh)}
-}
-
-/* vai pros lados */
-@keyframes lado{
-  0%{margin-left:0}
-  50%{margin-left:80px}
-  100%{margin-left:0}
-}
+@keyframes subir{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+@keyframes lado{0%{margin-left:-80px}50%{margin-left:80px}100%{margin-left:-80px}}
 </style>
 </head>
 
@@ -83,54 +35,42 @@ button{
 
 <div class="container">
   <h1>Para o amor da minha vida ❤️</h1>
-
   <div class="carta">
     Amor, só queria te lembrar o quanto você é importante pra mim.
     Seu sorriso melhora meus dias, sua voz me acalma e estar com você
     faz tudo ficar mais leve.<br><br>
-
     Sou muito grato por te ter ao meu lado e por cada momento que a gente
     compartilha.<br><br>
-
     Te amo mais do que consigo explicar em palavras.
   </div>
-
   <button onclick="toggleMusic()">▶ Tocar música</button>
 </div>
 
-<!-- Música (YouTube escondido) -->
 <iframe id="yt"
-  src="https://www.youtube.com/embed/eyT4Uu7Vx6k?enablejsapi=1"
-  allow="autoplay"
-  style="display:none">
-</iframe>
+src="https://www.youtube.com/embed/eyT4Uu7Vx6k?enablejsapi=1"
+style="display:none" allow="autoplay"></iframe>
 
 <script>
-let tocando = false;
-
+let tocando=false;
 function toggleMusic(){
-  const yt = document.getElementById("yt");
+  const yt=document.getElementById("yt");
   yt.contentWindow.postMessage(
-    '{"event":"command","func":"' + (tocando ? "pauseVideo" : "playVideo") + '","args":""}',
+    '{"event":"command","func":"'+(tocando?'pauseVideo':'playVideo')+'","args":""}',
     "*"
   );
-  tocando = !tocando;
+  tocando=!tocando;
 }
 
-// cria corações pela tela toda
 setInterval(()=>{
-  const h = document.createElement("div");
-  h.className = "heart";
-  h.innerHTML = "❤️";
-  h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = (Math.random()*25 + 15) + "px";
-  h.style.animationDuration =
-    (Math.random()*3 + 5) + "s, " +
-    (Math.random()*2 + 2) + "s";
-
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(Math.random()*28+14)+"px";
+  h.style.animationDuration=(Math.random()*3+5)+"s, "+(Math.random()*2+2)+"s";
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),9000);
-},200);
+},180);
 </script>
 
 </body>
