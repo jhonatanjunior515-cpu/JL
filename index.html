@@ -23,10 +23,13 @@ body{
   text-align:center;
 }
 
+/* Caixa do bilhete */
 .container{
   z-index:2;
   max-width:650px;
-  padding:25px;
+  padding:30px;
+  background:rgba(0,0,0,0.35);
+  border-radius:20px;
 }
 
 h1{
@@ -50,26 +53,28 @@ button{
   cursor:pointer;
 }
 
-/* Corações */
+/* CORAÇÕES */
 .heart{
   position:absolute;
-  bottom:-30px;
+  bottom:-40px;
   color:#ff6ec7;
-  opacity:0.85;
+  opacity:0.8;
   animation:
-    subir 7s linear forwards,
-    balanco 2.5s ease-in-out infinite;
+    subir linear forwards,
+    lado ease-in-out infinite;
 }
 
+/* sobe */
 @keyframes subir{
-  from{transform:translateY(0);opacity:1}
-  to{transform:translateY(-110vh);opacity:0}
+  from{transform:translateY(0)}
+  to{transform:translateY(-120vh)}
 }
 
-@keyframes balanco{
-  0%{transform:translateX(0)}
-  50%{transform:translateX(40px)}
-  100%{transform:translateX(0)}
+/* vai pros lados */
+@keyframes lado{
+  0%{margin-left:0}
+  50%{margin-left:80px}
+  100%{margin-left:0}
 }
 </style>
 </head>
@@ -93,7 +98,7 @@ button{
   <button onclick="toggleMusic()">▶ Tocar música</button>
 </div>
 
-<!-- Player YouTube oculto -->
+<!-- Música (YouTube escondido) -->
 <iframe id="yt"
   src="https://www.youtube.com/embed/eyT4Uu7Vx6k?enablejsapi=1"
   allow="autoplay"
@@ -112,16 +117,20 @@ function toggleMusic(){
   tocando = !tocando;
 }
 
-// corações
+// cria corações pela tela toda
 setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="❤️";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(Math.random()*20+15)+"px";
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (Math.random()*25 + 15) + "px";
+  h.style.animationDuration =
+    (Math.random()*3 + 5) + "s, " +
+    (Math.random()*2 + 2) + "s";
+
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(),8000);
-},300);
+  setTimeout(()=>h.remove(),9000);
+},200);
 </script>
 
 </body>
