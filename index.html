@@ -6,7 +6,7 @@
 <title>Para Você ❤️</title>
 
 <style>
-/* trava qualquer animação antiga */
+/* trava animações antigas */
 *{
   animation:none !important;
   transition:none !important;
@@ -17,15 +17,15 @@ body{
   min-height:100vh;
   background:#0b0014;
   color:white;
-  font-family: "Georgia", serif;
-  font-style: italic;
+  font-family:"Georgia", serif;
+  font-style:italic;
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
+  overflow:auto; /* <<< AGORA PODE ROLAR */
 }
 
-/* brilho vermelho escuro vindo de baixo */
+/* brilho vermelho embaixo */
 .red-glow{
   position:fixed;
   bottom:0;
@@ -42,7 +42,7 @@ body{
   z-index:0;
 }
 
-/* muitos corações PARADOS */
+/* corações parados */
 .hearts{
   position:fixed;
   inset:0;
@@ -57,25 +57,29 @@ body{
   opacity:0.35;
 }
 
-/* cartão */
+/* cartão com rolagem interna */
 .container{
   position:relative;
   z-index:1;
   max-width:760px;
+  width:90%;
+  max-height:85vh;          /* <<< limita altura */
   padding:36px;
   background:rgba(0,0,0,0.5);
   border-radius:24px;
   text-align:center;
   box-shadow:0 0 40px rgba(120,0,0,0.4);
+  overflow-y:auto;          /* <<< SCROLL NO TEXTO */
 }
 
-/* texto grande */
+/* título grande */
 .big-love{
   font-size:3.2em;
   color:#7a0000;
   margin-bottom:22px;
 }
 
+/* texto */
 .carta{
   font-size:1.25em;
   line-height:1.8;
