@@ -31,3 +31,98 @@ body{
 
 h1{
   color:#ff6ec7;
+  margin-bottom:20px;
+}
+
+.carta{
+  font-size:1.15em;
+  line-height:1.7;
+  opacity:0.95;
+}
+
+button{
+  margin-top:25px;
+  padding:15px 30px;
+  border-radius:30px;
+  border:none;
+  background:#ff6ec7;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Corações */
+.heart{
+  position:absolute;
+  bottom:-30px;
+  color:#ff6ec7;
+  opacity:0.85;
+  animation:
+    subir 7s linear forwards,
+    balanco 2.5s ease-in-out infinite;
+}
+
+@keyframes subir{
+  from{transform:translateY(0);opacity:1}
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+@keyframes balanco{
+  0%{transform:translateX(0)}
+  50%{transform:translateX(40px)}
+  100%{transform:translateX(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Para o amor da minha vida ❤️</h1>
+
+  <div class="carta">
+    Amor, só queria te lembrar o quanto você é importante pra mim.
+    Seu sorriso melhora meus dias, sua voz me acalma e estar com você
+    faz tudo ficar mais leve.<br><br>
+
+    Sou muito grato por te ter ao meu lado e por cada momento que a gente
+    compartilha.<br><br>
+
+    Te amo mais do que consigo explicar em palavras.
+  </div>
+
+  <button onclick="toggleMusic()">▶ Tocar música</button>
+</div>
+
+<!-- Player YouTube oculto -->
+<iframe id="yt"
+  src="https://www.youtube.com/embed/eyT4Uu7Vx6k?enablejsapi=1"
+  allow="autoplay"
+  style="display:none">
+</iframe>
+
+<script>
+let tocando = false;
+
+function toggleMusic(){
+  const yt = document.getElementById("yt");
+  yt.contentWindow.postMessage(
+    '{"event":"command","func":"' + (tocando ? "pauseVideo" : "playVideo") + '","args":""}',
+    "*"
+  );
+  tocando = !tocando;
+}
+
+// corações
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(Math.random()*20+15)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},300);
+</script>
+
+</body>
+</html>
