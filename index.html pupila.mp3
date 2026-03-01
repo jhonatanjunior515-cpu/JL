@@ -7,8 +7,6 @@
 
 <style>
 *{
-  animation:none !important;
-  transition:none !important;
 }
 
 body{
